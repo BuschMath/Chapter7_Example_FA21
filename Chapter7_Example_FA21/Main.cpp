@@ -10,7 +10,7 @@ int main()
 	int menu_input = 0;
 	bool loop = true;
 
-	while (loop)
+	do
 	{
 		cout << "Customer information program.\nMenu options:\n";
 		cout << "Enter 1 to add customer.\nEnter 2 to update account\nEnter 3 to exit.\n";
@@ -26,9 +26,11 @@ int main()
 		switch (menu_input)
 		{
 		case 1:	AddCustomer();
+			loop = true;
 			break;
 
 		case 2:	UpdateAccount();
+			loop = true;
 			break;
 
 		case 3:	cout << "Exiting program.\n\n";
@@ -38,7 +40,7 @@ int main()
 		default:	cout << "Input Error, try again\n\n";
 			break;
 		}
-	}
+	} while (loop);
 
 	return 0;
 }
